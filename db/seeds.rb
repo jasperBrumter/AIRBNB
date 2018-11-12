@@ -1,10 +1,18 @@
+puts "cleaning databse......."
+Boat.destroy_all
+User.destroy_all
+Review.destroy_all
+Booking.destroy_all
 puts "populating users......."
 puts "populating boats......."
+
 25.times do |i|
   user = User.new({
     name: Faker::Artist.name,
-    email: Faker::Internet.email
+    email: Faker::Internet.email,
+    password: 'difficultpassword'
   })
+  user.save!
 
   boat = Boat.new({
     location: Faker::Nation.capital_city,
@@ -14,8 +22,8 @@ puts "populating boats......."
   })
   boat.user = user
 
-  user.save
-  boat.save
+
+  boat.save!
 
   3.times do |variable|
     Review.create({
