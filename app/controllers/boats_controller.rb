@@ -22,6 +22,15 @@ class BoatsController < ApplicationController
     # @boat.user = params("user_id")
   end
 
+  def edit
+    @boat = Boat.find(params[:id])
+  end
+
+  def update
+    #@boat = Boat.find(params[:id])
+    #@boat = Boat.update(strongparams)
+  end
+
   private
 
   def strongparams
