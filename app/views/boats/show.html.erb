@@ -1,6 +1,5 @@
-<h2><%= @boat.location %></h2>
+<h2><%= @boat.name %></h2>
 <p><%= @boat.price %></p>
 <p><%= @boat.number_of_crew %></p>
 
 <%= link_to "edit", edit_boat_path(@boat.id) %>
-<%= link_to "delete", delete_path(@boat), method: :delete %>
