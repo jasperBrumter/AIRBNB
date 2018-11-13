@@ -1,0 +1,112 @@
+#beige-bg {
+  background-color: #d8bd8a;
+  height: 800px;
+  margin-top: -20px;
+}
+
+#title_top {
+  color: #1d1d1c;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 30px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  letter-spacing: 7px;
+}
+
+#title {
+  margin-top: 20px;
+  color: #fff278;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  padding-top: 60px;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.h2 {
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+
+
+#form-inputs {
+  padding: 0px 30px 0px 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.form-control {
+  padding: 10px 10px 10px 10px;
+  display: block;
+  width: 100%;
+  height: 39px;
+  padding: 6px 12px;
+  font-size: 18px;
+  line-height: 1.42857;
+  color: #000000;
+  background-image: none;
+  box-shadow: none;
+  border: none;
+  border-bottom: 3px solid #1d1d1c;
+  background-color: #d8bd8a;
+    &:focus {
+      box-shadow: none;
+      border-color: #fff278;
+    }
+}
+
+.new-forms-all {
+  padding: 0px 30px 0px 30px;
+  width: 500px;
+  margin: auto;
+}
+
+.form-group {
+    margin-bottom: 55px;
+}
+
+.btn {
+    color:#777777;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    background-color: #fff278;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.42857;
+    border-radius: 0px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+a {
+    color: #f3f8ee;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.login-style {
+  color: #f3f8ee ;
+      &:hover, :focus {
+      color: #364a4e;
+      text-decoration: line-through;
+  }
+}
+
+.login-style-space {
+  margin-top: 30px;
+}
