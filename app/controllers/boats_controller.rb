@@ -1,29 +1,35 @@
 class BoatsController < ApplicationController
 
   def index
-    @boats = Boat.all
+    @boats = policy_scope(Boat)
+    #@boats = Boat.all
   end
 
   def show
     @boat = Boat.find(params[:id])
+    authorize @boat
   end
 
   def destroy
     @boat = Boat.find(params[:id])
+    authorize @boat
     @boat.destroy
   end
 
   def new
+    authorize Boat
     @boat = Boat.new()
   end
 
   def create
+    authorize Boat
     @boat = Boat.new(strongparams)
     # @boat.user = params("user_id")
   end
 
   def edit
     @boat = Boat.find(params[:id])
+    authorize @boat
   end
 
   def update
