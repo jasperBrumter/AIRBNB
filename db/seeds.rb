@@ -19,6 +19,7 @@ puts "populating boats......."
     name: Faker::FunnyName.two_word_name,
     price: rand(30..80),
     number_of_crew: rand(1..4),
+    description: Faker::DrWho.quote
   })
   boat.user = user
 
