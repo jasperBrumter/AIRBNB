@@ -8,6 +8,7 @@ class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
     authorize @boat
+
   end
 
   def destroy
@@ -17,13 +18,15 @@ class BoatsController < ApplicationController
   end
 
   def new
-    authorize Boat
+
     @boat = Boat.new()
+    authorize @boat
   end
 
   def create
-    authorize Boat
+
     @boat = Boat.new(strongparams)
+    authorize @boat
     # @boat.user = params("user_id")
   end
 
@@ -33,7 +36,8 @@ class BoatsController < ApplicationController
   end
 
   def update
-    #@boat = Boat.find(params[:id])
+    @boat = Boat.find(params[:id])
+     authorize @boat
     #@boat = Boat.update(strongparams)
   end
 
