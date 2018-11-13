@@ -19,12 +19,13 @@ class BoatsController < ApplicationController
 
   def new
 
+    @picture = Picture.new
     @boat = Boat.new()
     authorize @boat
   end
 
   def create
-
+    raise
     @boat = Boat.new(strongparams)
     authorize @boat
     # @boat.user = params("user_id")
