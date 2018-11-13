@@ -1,9 +1,17 @@
 .boat_card{
   width: 350px;
+  position: relative;
   height: 250px;
-  padding: 50px;
   background-image: url("https://picsum.photos/300?image=617");
-  margin: 10px;
+  margin: 5px;
+  background-size: cover;
+  background-position: center;
+
+.boat_card_footer{
+  width: 350px;
+  height: 150px;
+  position: relative;
+}
 
  h3{
   font-size: 20px;
