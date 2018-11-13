@@ -1,1 +1,57 @@
 // Specific CSS for your home-page
+.separatetext {
+  background: $primaryblue;
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+}
+
+#background1 {
+  background-image: linear-gradient(rgba(240,240,240,0.2), rgba(245,245,245,0.1)), image-url("homepagebackground1.jpg");
+
+}
+
+#background2{
+  background-image: linear-gradient(rgba(250,250,250,0.2), rgba(245,245,245,0.3)), image-url("homepagebackground2.jpg");
+  height: 95vh;
+}
+
+#background3{
+  background-image: linear-gradient(rgba(65,99,99,0.2), rgba(65,99,99,0.2)), image-url("homepagebackground3.jpg");
+}
+
+.full {
+  height: 100%;
+}
+.textposition {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#leftflex {
+  align-items: flex-start;
+}
+#rightflex {
+  align-items: flex-end;
+}
+
+.homepagebutton {
+  padding: 12px;
+  background-color: $primaryblue;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgba(4,4,4,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  &:hover{
+    color: white;
+    text-decoration: none;
+    box-shadow: 3px 3px 6px rgba(4,4,4,0.95);
+  }
+}

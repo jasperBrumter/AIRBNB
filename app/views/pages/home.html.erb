@@ -1,17 +1,22 @@
 
 
 <div class="wrapper">
-  <div class="parallax">
+  <div class="parallax-background" id="background2">
+    <div class="container full">
+      <div class="textposition" id="leftflex">
+        <h1>Find your perfect boat</h1>
+        <p>The adventure of a lifetime</p>
+        <%= link_to "See all boats", boats_path, class: "homepagebutton" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="wrapper">
+  <div class="separatetext">
     <div class="container">
-
-      <h1>Hello hello hello hello</h1>
-      <p>Find me in app/views/pages/home.html.erb</p>
-
-      <%= link_to "See all boats", boats_path %>
-      <%= link_to "Sign up", new_user_registration_path %>
-      <%= link_to "Sign in", new_user_session_path %>
-
-
+      <p>Made with love by the Derails crew.</p>
     </div>
   </div>
 </div>
