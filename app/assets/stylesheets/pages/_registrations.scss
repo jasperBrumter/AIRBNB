@@ -1,7 +1,7 @@
 #beige-bg {
   background-color: #d8bd8a;
   height: 800px;
-  margin-top: 0px;
+  margin-top: -20px;
 }
 
 #title_top {
@@ -68,14 +68,13 @@
     margin-bottom: 55px;
 }
 
-.btn {
+.new-btn {
     color:#777777;
     display: inline-block;
     margin-bottom: 0;
     font-weight: normal;
     text-align: center;
     vertical-align: middle;
-    touch-action: manipulation;
     background-color: #fff278;
     cursor: pointer;
     background-image: none;
@@ -85,11 +84,6 @@
     font-size: 18px;
     line-height: 1.42857;
     border-radius: 0px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
 }
 
 a {
