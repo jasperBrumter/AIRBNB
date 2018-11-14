@@ -41,8 +41,8 @@ class BoatsController < ApplicationController
   end
 
   def update
+    Boat.find(params[:id]).update(strongparams)
     @boat = Boat.find(params[:id])
-    #@boat = Boat.update(strongparams)
     authorize @boat
     redirect_to boat_path(@boat)
   end
