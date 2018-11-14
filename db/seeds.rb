@@ -5,6 +5,7 @@ Review.destroy_all
 Booking.destroy_all
 puts "populating users......."
 puts "populating boats......."
+puts "adding hilarious Reviews......"
 
 25.times do |i|
   user = User.new({
@@ -19,6 +20,7 @@ puts "populating boats......."
     name: Faker::FunnyName.two_word_name,
     price: rand(30..80),
     number_of_crew: rand(1..4),
+    description: Faker::DrWho.quote
   })
   boat.user = user
 
@@ -35,7 +37,6 @@ puts "populating boats......."
 end
 
 puts "adding bookings......."
-puts "and reviews......."
 25.times do |i|
   Booking.new({
     checkin: Date.new(2018,11,16),

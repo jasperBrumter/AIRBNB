@@ -1,6 +1,6 @@
 
 <div class="wrapper">
-  <div class="container boatcards">
+  <div class="container navbar-margin">
     <div class="row">
       <% @boats.each do |boat| %>
         <%= link_to boat_path(boat) do %>
@@ -19,6 +19,11 @@
           </div>
         <% end %>
       <% end %>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3 col-md-2 col-md-offset-5 ">
+        <%= link_to "Add your boat!", new_boat_path, class: "homepagebutton" %>
+      </div>
     </div>
   </div>
 </div>
