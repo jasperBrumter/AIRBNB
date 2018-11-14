@@ -1,11 +1,11 @@
 #beige-bg {
-  background-color: #d8bd8a;
+  background-color: $primarybeige;
   height: 800px;
   margin-top: -20px;
 }
 
 #title_top {
-  color: #1d1d1c;
+  color: $primaryblack;
   text-align: center;
   font-family: 'Roboto Mono', monospace;
   font-size: 30px;
@@ -15,7 +15,7 @@
 
 #title {
   margin-top: 20px;
-  color: #fff278;
+  color: $primaryyellow;
   text-align: center;
   font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
@@ -24,12 +24,6 @@
   letter-spacing: 3px;
 }
 
-.h2 {
-  text-align: center;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 30px;
-  margin-bottom: 60px;
-}
 
 
 #form-inputs {
@@ -50,11 +44,11 @@
   background-image: none;
   box-shadow: none;
   border: none;
-  border-bottom: 3px solid #1d1d1c;
-  background-color: #d8bd8a;
+  border-bottom: 3px solid $primaryblack;
+  background-color: $primarybeige;
     &:focus {
       box-shadow: none;
-      border-color: #fff278;
+      border-color: $primaryyellow;
     }
 }
 
@@ -69,13 +63,13 @@
 }
 
 .new-btn {
-    color:#777777;
+    color:$primarygray;
     display: inline-block;
     margin-bottom: 0;
     font-weight: normal;
     text-align: center;
     vertical-align: middle;
-    background-color: #fff278;
+    background-color: $primaryyellow;
     cursor: pointer;
     background-image: none;
     border: 1px solid transparent;
@@ -87,15 +81,15 @@
 }
 
 a {
-    color: #f3f8ee;
+    color: $primarywhite;
     text-decoration: none;
     margin-top: 20px;
 }
 
 .login-style {
-  color: #f3f8ee ;
+  color: $primarywhite ;
       &:hover, :focus {
-      color: #364a4e;
+      color: $primaryblue;
       text-decoration: line-through;
   }
 }
