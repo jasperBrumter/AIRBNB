@@ -7,5 +7,4 @@ class PagesController < ApplicationController
     @boats = Boat.where(user: @user)
     @bookings = Booking.where(user: @user)
   end
-
 end

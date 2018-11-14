@@ -1,13 +1,14 @@
 puts "cleaning databse......."
-Boat.destroy_all
-User.destroy_all
 Review.destroy_all
 Booking.destroy_all
+Boat.destroy_all
+User.destroy_all
+
+
 puts "populating users......."
 puts "populating boats......."
 puts "adding hilarious Reviews......"
 
-bob = User.create(email: "email@email.com", password: "password", name: "bob")
 
 25.times do |i|
   user = User.new({
@@ -29,31 +30,47 @@ bob = User.create(email: "email@email.com", password: "password", name: "bob")
 
   boat.save!
 
-  3.times do |variable|
+  3.times do
     Review.create({
-      boat_id: i,
+      boat_id: Boat.first.id+(i-1),
       rating: rand(1..5),
       content: Faker::RickAndMorty.quote
     })
   end
 end
 
-puts "adding bookings......."
-25.times do |i|
-  Booking.create!({
-    checkin: Date.new(2018,11,16),
-    checkout: Date.new(2018,12,rand(1..20)),
-    boat_id: rand(1..25),
-    user_id: rand(1..25)
-  })
-end
+puts "creating test-user:"
+puts "email: a@a.ca"
+puts "password: 123456"
 
-booking = Booking.new({
+bob = User.new({
+  email: "a@a.ca",
+  password: "123456",
+  name: "bob"
+})
+bob.save
+
+boat = Boat.new({
+  location: Faker::Nation.capital_city,
+  name: Faker::FunnyName.two_word_name,
+  price: rand(30..80),
+  number_of_crew: rand(1..4),
+  description: Faker::DrWho.quote
+})
+boat.user = bob
+boat.save!
+
+
+25.times do |iterator|
+  booking = Booking.new({
     checkin: Date.new(2018,11,11),
     checkout: Date.new(2018,12,rand(1..20)),
-    boat_id: rand(1..25),
-    user: bob
+    boat_id: Boat.first.id + (iterator -1)
   })
+  booking.user = bob
 
-booking.save!
+  booking.save
+
+end
+
 #hi man

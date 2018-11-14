@@ -6,21 +6,19 @@
 
     <div class="row">
        <% @bookings.each do |booking| %>
-        <%= link_to booking_path(booking) do %>
           <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0 col-lg-4 hpadding-1">
             <div class="booking_card">
-              <%= image_tag("homepagebackground3.jpg", class: "bookingimage") %>
+              <%= image_tag("homepagebackground3.jpg", class: "boatimage") %>
               <div class="cardfooter">
                 <div>
-                  <%= booking.name %>
+                  <%= booking.checkin %>
                 </div>
                 <div>
-                  $ <%= booking.price.round %>
+                  $ <%= booking.checkout%>
                 </div>
               </div>
             </div>
           </div>
-        <% end %>
       <% end %>
     </div>
 
