@@ -17,11 +17,6 @@
 }
 
 
-  // a img.thumb-image:hover {
-  //   background-color: #ffffff;
-  //   opacity: 0.6;
-  // } `
-
 .boatimage {
   width: 100%;
   height: 180px;
@@ -40,6 +35,7 @@
   align-items: center;
   justify-content: space-between;
   color: $primaryblue;
+  font: $body-font;
 }
 
 
