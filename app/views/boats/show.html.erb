@@ -15,16 +15,21 @@
       <div class="col-xs-10 col-xs-offset-1 col-md-5 col-md-offset-0">
         <div class="contact-information">
           <div class="contact-text">
-            <h3><%= @boat.name %></h3>
-            <p>Member since: July 2018</p>
+            <p>Renter information</p><hr>
+            <% if policy(@boat).edit? %>
+              <p>This is your listing!</p>
+            <% else %>
+              <h3><%= @boat.name %></h3>
+              <p>Member since: July 2018</p>
+            <% end %>
           </div>
           <div class="contact-buttons">
             <% if policy(@boat).edit? %>
-              <%= link_to "edit", edit_boat_path(@boat.id), class: "editbutton" %>
+              <%= link_to "edit", edit_boat_path(@boat), class: "editbutton" %>
               <%= link_to "delete", "/boats/#{@boat.id}", method: "delete", class: "deletebutton" %>
             <% else %>
               <%= link_to "book", edit_boat_path(@boat.id), class: "bookbutton" %>
-              <%= link_to "add a review" %>
+              <%= link_to "add a review", "#", class: "editbutton" %>
             <% end %>
           </div>
         </div>
