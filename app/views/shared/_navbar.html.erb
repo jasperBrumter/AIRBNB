@@ -1,9 +1,11 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <img src="" alt="logo">
-  </a>
-
+<!--   <a href="/" class="navbar-wagon-brand">
+    <img src="alex-loup-392625-unsplash.jpg" alt="logob" class="navbar-wagon-brand">
+  </a> -->
+  <%= link_to home_path, class:"navbar-wagon-brand" do %>
+  <%= image_tag "OAR-01.png" %>
+<% end %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to "Sign up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>

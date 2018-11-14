@@ -1,4 +1,5 @@
 // Specific CSS for your home-page
+
 .separatetext {
   background: $primaryblue;
   color: white;
@@ -7,6 +8,21 @@
   align-items: center;
   justify-content: center;
   height: 5vh;
+}
+
+#title_top_home {
+  color: #364a4e;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 40px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+#subtilte_home {
+  color: #364a4e;
+  font-family: 'Source Sans Pro';
+  font-size: 20px;
 }
 
 #background1 {
@@ -40,18 +56,26 @@
   align-items: flex-end;
 }
 
-.homepagebutton {
-  padding: 12px;
-  background-color: $primaryblue;
-  border-radius: 5px;
-  box-shadow: 3px 3px 5px rgba(4,4,4,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  &:hover{
-    color: white;
-    text-decoration: none;
-    box-shadow: 3px 3px 6px rgba(4,4,4,0.95);
-  }
+.new-btn {
+  color:#777777;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #fff278;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 18px;
+  line-height: 1.42857;
+  border-radius: 0px;
 }
+.new-btn-home:hover {
+  background-color:#f3f8ee;
+  color: #364a4e;
+  text-decoration: none;
+}
+
