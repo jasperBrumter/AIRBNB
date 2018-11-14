@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="container navbar-margin">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+
+
+        <%= simple_form_for [@boat, @review] do |f| %>
+          <%= f.input :content %>
+          <%= f.input :rating %>
+          <%= f.submit  "add a review", class: "btn btn-primary" %>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
