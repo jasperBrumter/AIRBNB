@@ -32,7 +32,7 @@
               <%= link_to "edit", edit_boat_path(@boat), class: "editbutton" %>
               <%= link_to "delete", "/boats/#{@boat.id}", method: "delete", class: "deletebutton" %>
             <% else %>
-              <%= link_to "book", edit_boat_path(@boat.id), class: "bookbutton" %>
+              <%= link_to "book", new_booking_path(@boat.id), class: "bookbutton" %>
               <%= link_to "review", new_boat_review_path(@boat.id), class: "editbutton" %>
             <% end %>
           </div>

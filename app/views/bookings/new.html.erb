@@ -1,2 +1,18 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="wrapper">
+  <div class="container navbar-margin">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+
+
+        <%= simple_form_for [@boat, @booking] do |f| %>
+          <%= f.input :checkin %>
+          <%= f.input :checkout %>
+          <%= f.submit  "Book!", class: "btn btn-primary" %>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
