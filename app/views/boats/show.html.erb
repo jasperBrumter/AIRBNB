@@ -19,10 +19,12 @@
             <p>Member since: July 2018</p>
           </div>
           <div class="contact-buttons">
-            <%= link_to "book", edit_boat_path(@boat.id), class: "bookbutton" %>
             <% if policy(@boat).edit? %>
               <%= link_to "edit", edit_boat_path(@boat.id), class: "editbutton" %>
               <%= link_to "delete", "/boats/#{@boat.id}", method: "delete", class: "deletebutton" %>
+            <% else %>
+              <%= link_to "book", edit_boat_path(@boat.id), class: "bookbutton" %>
+              <%= link_to "add a review" %>
             <% end %>
           </div>
         </div>

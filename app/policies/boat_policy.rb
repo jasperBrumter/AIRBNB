@@ -10,11 +10,11 @@ class BoatPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    record.user == user || user.admin
   end
 
   def update?
-    record.user == user
+    record.user == user || user.admin
   end
 
   def new?
@@ -26,6 +26,6 @@ class BoatPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record.user == user || user.admin
   end
 end
