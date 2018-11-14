@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get "/boats/:boat_id/reviews/new", to: "reviews#new", as: "new_boat_review"
   post "/boats/:boat_id/reviews", to: "reviews#create", as: "boat_reviews"
+  get "/boats/:boat_id/newbooking", to: "bookings#new", as: "new_booking"
+  post "/boats/:boat_id/bookings", to: "bookings#create", as: "boat_bookings"
 end
