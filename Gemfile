@@ -11,6 +11,7 @@ gem "faker"
 gem "devise"
 gem "pundit"
 gem 'cloudinary'
+gem "geocoder"
 
 gem 'rest-client', '>= 2.0.2'
 

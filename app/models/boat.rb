@@ -4,12 +4,14 @@ class Boat < ApplicationRecord
   has_many :reviews
   has_many :pictures, dependent: :destroy
 
-  validates :location, presence: true
+  validates :address, presence: true
   validates :user, presence: true
   validates :price, presence: true, numericality: true
   validates :number_of_crew, presence: true, numericality: { only_integer: true }
 
   after_initialize :init
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   def init
     self.average_rating  ||= 0.0           #will set the default value only if it's nil

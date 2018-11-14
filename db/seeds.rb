@@ -16,7 +16,7 @@ puts "adding hilarious Reviews......"
   user.save!
 
   boat = Boat.new({
-    location: Faker::Nation.capital_city,
+    address: Faker::Nation.capital_city,
     name: Faker::FunnyName.two_word_name,
     price: rand(30..80),
     number_of_crew: rand(1..4),
