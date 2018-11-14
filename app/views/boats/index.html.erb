@@ -5,8 +5,8 @@
       <% @boats.each do |boat| %>
         <%= link_to boat_path(boat) do %>
           <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0 col-lg-4 hpadding-1">
-            <div class="boat_card">
-              <%= image_tag("homepagebackground3.jpg", class: "boatimage") %>
+            <div class="boat_card ">
+              <div class="boatimage"></div>
               <div class="cardfooter">
                 <div>
                   <%= boat.name %>

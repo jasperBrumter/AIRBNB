@@ -1,5 +1,5 @@
 class BoatsController < ApplicationController
-
+  layout "layout-navbar-dark", only: :index
   def index
     @boats = policy_scope(Boat)
     #@boats = Boat.all
