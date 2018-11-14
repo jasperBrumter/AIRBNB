@@ -7,6 +7,8 @@ puts "populating users......."
 puts "populating boats......."
 puts "adding hilarious Reviews......"
 
+bob = User.create(email: "email@email.com", password: "password", name: "bob")
+
 25.times do |i|
   user = User.new({
     name: Faker::Artist.name,
@@ -38,11 +40,20 @@ end
 
 puts "adding bookings......."
 25.times do |i|
-  Booking.new({
+  Booking.create!({
     checkin: Date.new(2018,11,16),
     checkout: Date.new(2018,12,rand(1..20)),
     boat_id: rand(1..25),
     user_id: rand(1..25)
   })
 end
+
+booking = Booking.new({
+    checkin: Date.new(2018,11,11),
+    checkout: Date.new(2018,12,rand(1..20)),
+    boat_id: rand(1..25),
+    user: bob
+  })
+
+booking.save!
 #hi man
