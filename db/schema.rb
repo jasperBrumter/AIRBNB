@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_013334) do
+ActiveRecord::Schema.define(version: 2018_11_14_152612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "boats", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "location"
+    t.string "address"
     t.float "price"
     t.integer "number_of_crew"
     t.float "average_rating"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2018_11_14_013334) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.text "description"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_boats_on_user_id"
   end
 

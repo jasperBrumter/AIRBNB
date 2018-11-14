@@ -3,6 +3,15 @@ class BoatsController < ApplicationController
   def index
     @boats = policy_scope(Boat)
     #@boats = Boat.all
+    @boats = Boat.where.not(latitude: nil, longitude: nil)
+
+    @markers = @boats.map do |boat|
+      {
+        lng: boat.longitude,
+        lat: boat.latitude,
+        infoWindow: { content: render_to_string(partial: "/boats/map_window", locals: { boat: boat }) }
+      }
+    end
   end
 
   def show
@@ -41,14 +50,15 @@ class BoatsController < ApplicationController
   end
 
   def update
+    Boat.find(params[:id]).update(strongparams)
     @boat = Boat.find(params[:id])
-     authorize @boat
-    #@boat = Boat.update(strongparams)
+    authorize @boat
+    redirect_to boat_path(@boat)
   end
 
   private
 
   def strongparams
-    params.require("boat").permit(:name, :description, :price, :number_of_crew, :location)
+    params.require("boat").permit(:name, :description, :price, :number_of_crew, :address)
   end
 end
