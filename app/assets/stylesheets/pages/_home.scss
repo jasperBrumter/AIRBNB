@@ -11,7 +11,7 @@
 }
 
 #title_top_home {
-  color: #364a4e;
+  color: $primaryblue;
   text-align: center;
   font-family: 'Roboto Mono', monospace;
   font-size: 40px;
@@ -20,7 +20,7 @@
 }
 
 #subtilte_home {
-  color: #364a4e;
+  color: $primaryblue;
   font-family: 'Source Sans Pro';
   font-size: 20px;
 }
@@ -57,13 +57,13 @@
 }
 
 .new-btn {
-  color:#777777;
+  color:$primarygray;
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
-  background-color: #fff278;
+  background-color: $primaryyellow;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -72,10 +72,11 @@
   font-size: 18px;
   line-height: 1.42857;
   border-radius: 0px;
+
 }
 .new-btn-home:hover {
-  background-color:#f3f8ee;
-  color: #364a4e;
+  background-color:$primarywhite;
+  color: $primaryblue;
   text-decoration: none;
 }
 
