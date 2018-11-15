@@ -2,12 +2,13 @@ class Boat < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_many :reviews, dependent: :destroy
-  has_many :pictures, dependent: :destroy
 
   validates :address, presence: true
   validates :user, presence: true
   validates :price, presence: true, numericality: true
   validates :number_of_crew, presence: true, numericality: { only_integer: true }
+
+  mount_uploader :photo1, PhotoUploader
 
   after_initialize :init
   geocoded_by :address
