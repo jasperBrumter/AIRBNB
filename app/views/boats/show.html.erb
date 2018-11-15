@@ -1,10 +1,10 @@
-<div class="wrapper">
+<div class="wrapper-show">
   <%= image_tag("homepagebackground3.jpg", class: "showimage") %>
   <div class="container boat-information">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-md-7 col-md-offset-0">
         <div >
-          <h2><%= @boat.name %></h2>
+          <h1 class="boat-title"> <%= @boat.name %></h1>
           <p><i class="fas fa-map-marker"></i>  <%= @boat.address %></p>
           <p><i class="fas fa-dollar-sign"></i>  <%= @boat.price.round %> per day</p>
           <p><i class="fas fa-male"></i>  <%= @boat.number_of_crew %> guest</p>
@@ -28,8 +28,8 @@
               <%= link_to "edit", edit_boat_path(@boat), class: "editbutton" %>
               <%= link_to "delete", "/boats/#{@boat.id}", method: "delete", class: "deletebutton" %>
             <% else %>
-              <%= link_to "book", edit_boat_path(@boat.id), class: "bookbutton" %>
-              <%= link_to "review", "#", class: "editbutton" %>
+              <%= link_to "book", edit_boat_path(@boat.id), class: "new-btn-show" %>
+              <%= link_to "review", "#", class: "new-btn-show" %>
             <% end %>
           </div>
         </div>

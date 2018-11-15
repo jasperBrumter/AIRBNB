@@ -1,7 +1,21 @@
 /* Main navbar */
 .dark {
   background-color: $primaryblue;
-  height: 200px;
+  height: 500px;
+}
+.navbar-wagon-link-dark {
+  color: $primaryyellow;
+  font-size: 18px;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.navbar-wagon-link-dark:hover {
+  color: $primarywhite;
+  text-decoration: none;
 }
 
 .navbar-wagon {
@@ -20,6 +34,7 @@
 .navbar-wagon-brand img {
   height: 200px;
   padding: 60px;
+  padding-bottom: 80px;
   margin: -50px;
 
 }
@@ -46,7 +61,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #fff278;
+  color: $primaryyellow;
   font-size: 18px;
   text-align: center;
   font-family: 'Roboto Mono', monospace;
@@ -56,7 +71,7 @@
   text-transform: uppercase;
 }
 .navbar-wagon-link:hover {
-  color: #364a4e;
+  color: $primaryblue;
   text-decoration: none;
 }
 /* Dropdown menu */

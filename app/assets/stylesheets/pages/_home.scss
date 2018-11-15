@@ -15,7 +15,6 @@
   text-align: center;
   font-family: 'Roboto Mono', monospace;
   font-size: 40px;
-  margin-bottom: 20px;
   letter-spacing: 2px;
 }
 
@@ -59,7 +58,6 @@
 .new-btn {
   color:$primarygray;
   display: inline-block;
-  margin-bottom: 0;
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
@@ -72,8 +70,8 @@
   font-size: 18px;
   line-height: 1.42857;
   border-radius: 0px;
-
 }
+
 .new-btn-home:hover {
   background-color:$primarywhite;
   color: $primaryblue;
