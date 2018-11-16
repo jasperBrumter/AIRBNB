@@ -62,3 +62,18 @@
     box-shadow: 3px 3px 6px rgba(4,4,4,0.95);
   }
 }
+
+#addbutton {
+  border: 2px solid $primarybeige;
+  color:  $primarybeige;
+  padding: 10px 20px 20px 20px ;
+  margin-bottom: 40px;
+  border-radius: 0 0 50px 50px;
+  text-decoration: none;
+  transition: 1.2s;
+  &:hover {
+    background-color: $primarybeige;
+    color: $primaryblue;
+    box-shadow: 2px 2px 10px rgb(113,208,237);
+  }
+}
