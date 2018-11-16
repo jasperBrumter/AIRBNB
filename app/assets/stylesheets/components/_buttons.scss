@@ -62,7 +62,21 @@
     box-shadow: 3px 3px 6px rgba(4,4,4,0.95);
   }
 }
-
+#addbuttonmast2 {
+  height: 100px;
+  border: 2px solid $primarybeige;
+  border-radius: 0 80px 0 0;
+  width: 50px;
+  margin-left: 70px;
+  background-color: rgba(240,240,240,0.4);
+}
+#addbuttonmast1 {
+  height: 15px;
+  border-left: 2px solid $primarybeige;
+  width: 30px;
+  margin-bottom: 10px;
+  margin-left: 70px;
+}
 #addbutton {
   border: 2px solid $primarybeige;
   color:  $primarybeige;
