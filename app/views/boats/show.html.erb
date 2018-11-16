@@ -7,7 +7,10 @@
           <h1 class="boat-title"> <%= @boat.name %></h1>
           <p><i class="fas fa-map-marker"></i>  <%= @boat.address %></p>
           <p><i class="fas fa-dollar-sign"></i>  <%= @boat.price.round %> per day</p>
-          <p><i class="fas fa-male"></i>  <%= @boat.number_of_crew %> guest</p>
+          <p><i class="fas fa-male"></i>  <%= @boat.number_of_crew %>
+            <% if @boat.number_of_crew > 1 %>guests
+            <% else %>guest
+            <% end %></p>
           <p><i class="fas fa-info"></i>  <%= @boat.description %></p>
         </div>
       </div>
@@ -15,11 +18,12 @@
       <div class="col-xs-10 col-xs-offset-1 col-md-5 col-md-offset-0">
         <div class="contact-information">
           <div class="contact-text">
-            <p>Renter information</p><hr>
+            <h6>Renter information</h6>
             <% if policy(@boat).edit? %>
               <p>This is your listing!</p>
             <% else %>
-              <h3><%= @boat.name %></h3>
+              <p><%= @boat.user.email.split("@").first %></p>
+              <p><%= @boat.user.email %></p>
               <p>Member since: July 2018</p>
             <% end %>
           </div>

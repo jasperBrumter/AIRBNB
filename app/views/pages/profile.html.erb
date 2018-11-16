@@ -1,28 +1,44 @@
 <div class="wrapper">
   <div class="container">
-    <div class="user-profile">
+    <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0 col-lg-4 hpadding-1 user-profile">
+      <img src="https://goo.gl/Y5A466" class="card-user-avatar">
+      <div class="user-info">
+        <%= @user.email.split("@").first %>
+      </div>
+      <div class="user-bookings">
+        <h1>Number of bookings: <%= @user.bookings.count %></h1>
+        <h1>Number of listings: <%= @user.boats.count %></h1>
+
+      </div>
 
     </div>
 
     <div class="row">
+      <h2>Your Bookings</h2>
+      <hr>
        <% @bookings.each do |booking| %>
+          <%= link_to boat_path(booking.boat) do %>
           <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0 col-lg-4 hpadding-1">
             <div class="booking_card">
               <%= image_tag("homepagebackground3.jpg", class: "boatimage") %>
               <div class="cardfooter">
-                <div>
-                  <%= booking.checkin %>
+                <div class="text">
+                  checkin: <%= booking.checkin %>
                 </div>
                 <div>
-                  $ <%= booking.checkout%>
+                  checkout: <%= booking.checkout%>
                 </div>
               </div>
             </div>
           </div>
+          <% end %>
       <% end %>
     </div>
+    <hr>
 
      <div class="row">
+      <h2>Your Boats</h2>
+      <hr>
       <% @boats.each do |boat| %>
         <%= link_to boat_path(boat) do %>
           <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0 col-lg-4 hpadding-1">
