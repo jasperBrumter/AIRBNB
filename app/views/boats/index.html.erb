@@ -1,6 +1,15 @@
 
 <div class="wrapper bg-primary-blue">
   <div class="container navbar-margin">
+    <%= form_tag boats_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find your boat - Enter a City"
+      %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
     <div class="row">
       <% @boats.each do |boat| %>
         <%= link_to boat_path(boat) do %>

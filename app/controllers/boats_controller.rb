@@ -2,9 +2,7 @@ class BoatsController < ApplicationController
   layout "layout-navbar-dark", only: [:index, :show]
   def index
     @boats = policy_scope(Boat)
-    #@boats = Boat.all
-    @boats = Boat.where.not(latitude: nil, longitude: nil)
-
+    @boats = @boats.near(params[:query]) if params[:query].present?
     @markers = @boats.map do |boat|
       {
         lng: boat.longitude,
