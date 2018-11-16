@@ -3,11 +3,11 @@
     <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0 col-lg-4 hpadding-1 user-profile">
       <img src="https://goo.gl/Y5A466" class="card-user-avatar">
       <div class="user-info">
-        <%= @user.email.split("@").first %>
+        <strong><h2><%= @user.email.split("@").first %></h2></strong>
       </div>
       <div class="user-bookings">
-        <h1>Number of bookings: <%= @user.bookings.count %></h1>
-        <h1>Number of listings: <%= @user.boats.count %></h1>
+        <h2>Number of bookings: <%= @user.bookings.count %></h2>
+        <h2>Number of listings: <%= @user.boats.count %></h2>
 
       </div>
 
@@ -23,10 +23,10 @@
               <%= image_tag("homepagebackground3.jpg", class: "boatimage") %>
               <div class="cardfooter">
                 <div class="text">
-                  checkin: <%= booking.checkin %>
+                  <strong>checkin:</strong> <%= booking.checkin %>
                 </div>
                 <div>
-                  checkout: <%= booking.checkout%>
+                  <strong>checkout:</strong> <%= booking.checkout%>
                 </div>
               </div>
             </div>
