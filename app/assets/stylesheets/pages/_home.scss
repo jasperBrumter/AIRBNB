@@ -31,7 +31,8 @@
 
 #background2{
   background-image: linear-gradient(rgba(250,250,250,0.2), rgba(245,245,245,0.3)), image-url("homepagebackground2.jpg");
-  height: 95vh;
+  height: 100%;
+  background-size: cover;
 }
 
 #background3{
@@ -47,6 +48,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 100px;
 }
 #leftflex {
   align-items: flex-start;
