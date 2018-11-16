@@ -6,7 +6,30 @@
         <%= link_to boat_path(boat) do %>
           <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0 col-lg-4 hpadding-1">
             <div class="boat_card ">
-              <div class="boatimage"></div>
+
+
+
+
+
+                <% if boat.photo1.file == nil %>
+                  <div class="boatimage" onmouseover="bigImg(this)" onmouseout="normalImg(this)" style="background-image: url(<%= asset_path 'boat-01.png' %>), linear-gradient(rgba(54,74,78,0.7), rgba(54,74,78,0.9)),url(<%= asset_path 'homepagebackground3.jpg' %>);" >
+
+                    <div class="innerhover" style="background-image: url(<%= asset_path 'homepagebackground3.jpg' %>);">
+
+                    </div>
+                  </div>
+                <% else %>
+                  <div class="boatimage" onmouseover="bigImg(this)" onmouseout="normalImg(this)" style="background-image: url(<%= asset_path 'boat-01.png' %>), linear-gradient(rgba(54,74,78,0.7), rgba(54,74,78,0.9)),url('<%= cl_image_path boat.photo1%>');">
+                    <div class="innerhover" style="background-image: url('<%= cl_image_path boat.photo1%>');">
+
+                    </div>
+
+                  </div>
+                <% end %>
+
+
+
+
               <div class="cardfooter">
                 <div>
                   <%= boat.name %>
@@ -33,3 +56,13 @@
   height: 250px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
+
+<script>
+function bigImg(x) {
+    x.querySelector(".innerhover").classList.add("hidden");
+}
+
+function normalImg(x) {
+   x.querySelector(".innerhover").classList.remove("hidden");
+}
+</script>
