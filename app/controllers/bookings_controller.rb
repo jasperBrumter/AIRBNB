@@ -6,30 +6,43 @@ class BookingsController < ApplicationController
   end
 
   def create
-    results = review_params
-    checkinyear = results["checkin(1i)"].to_i
-    checkinmonth = results["checkin(2i)"].to_i
-    checkinday = results["checkin(3i)"].to_i
-    checkoutyear = results["checkout(1i)"].to_i
-    checkoutmonth = results["checkout(2i)"].to_i
-    checkoutday = results["checkout(3i)"].to_i
-
-    @booking = Booking.new()
-    @booking.checkin = Date.new(checkinyear, checkinmonth, checkinday)
-    @booking.checkout = Date.new(checkoutyear, checkoutmonth, checkoutday)
     @boat = Boat.find(params[:boat_id])
-    @booking.boat = @boat
-    @booking.user = current_user
+    @booking = Booking.new()
 
-    @booking.save
+    results = review_params
 
+    checkin = results["checkin"].split("-")
+    checkout = results["checkout"].split("-")
+
+    checkinyear = checkin[0].to_i
+    checkinmonth = checkin[1].to_i
+    checkinday = checkin[2].to_i
+    checkoutyear = checkout[0].to_i
+    checkoutmonth = checkout[1].to_i
+    checkoutday = checkout[2].to_i
+
+    if Date.valid_date?(checkinyear, checkinmonth, checkinday) and Date.valid_date?(checkoutyear, checkoutmonth, checkoutday)
+
+      @booking.checkin = Date.new(checkinyear, checkinmonth, checkinday)
+      @booking.checkout = Date.new(checkoutyear, checkoutmonth, checkoutday)
+
+      @booking.boat = @boat
+      @booking.user = current_user
+
+      if @booking.save
+        redirect_to profile_path
+      else
+        render :new
+      end
+    else
+      render :new
+    end
     authorize @booking
-    redirect_to profile_path
   end
 
   private
 
   def review_params
-    params.require(:booking).permit("checkin(1i)","checkin(2i)","checkin(3i)","checkout(1i)","checkout(2i)","checkout(3i)")
+    params.require(:booking).permit("checkin", "checkout")
   end
 end
