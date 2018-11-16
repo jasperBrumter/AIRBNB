@@ -1,5 +1,9 @@
 <div class="wrapper-show">
-  <%= image_tag("homepagebackground3.jpg", class: "showimage") %>
+  <% if @boat.photo1.file == nil %>
+    <%= image_tag("homepagebackground3.jpg", class: "showimage") %>
+  <% else %>
+    <%= cl_image_tag @boat.photo1, class: "showimage" %>
+  <% end %>
   <div class="container boat-information">
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-md-7 col-md-offset-0">
