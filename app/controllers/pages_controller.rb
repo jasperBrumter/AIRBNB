@@ -6,9 +6,8 @@ class PagesController < ApplicationController
     @user = current_user
     @boats = Boat.where(user: @user)
     @bookings = Booking.where(user: @user)
+
   end
 
-  def newbooking
-    raise
-  end
+
 end
