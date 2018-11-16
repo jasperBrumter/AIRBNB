@@ -20,7 +20,12 @@
           <%= link_to boat_path(booking.boat) do %>
           <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0 col-lg-4 hpadding-1">
             <div class="booking_card">
-              <%= image_tag("homepagebackground3.jpg", class: "boatimage") %>
+
+              <% if booking.boat.photo1.file == nil %>
+                <%= image_tag("homepagebackground3.jpg", class: "boatimage") %>
+              <% else %>
+                <%= cl_image_tag booking.boat.photo1, class: "boatimage" %>
+              <% end %>
               <div class="cardfooter">
                 <div class="text">
                   <strong>checkin:</strong> <%= booking.checkin %>
@@ -43,7 +48,11 @@
         <%= link_to boat_path(boat) do %>
           <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0 col-lg-4 hpadding-1">
             <div class="boat_card">
-              <%= image_tag("homepagebackground3.jpg", class: "boatimage") %>
+              <% if boat.photo1.file == nil %>
+                <%= image_tag("homepagebackground3.jpg", class: "boatimage") %>
+              <% else %>
+                <%= cl_image_tag boat.photo1, class: "boatimage" %>
+              <% end %>
               <div class="cardfooter">
                 <div>
                   <%= boat.name %>
